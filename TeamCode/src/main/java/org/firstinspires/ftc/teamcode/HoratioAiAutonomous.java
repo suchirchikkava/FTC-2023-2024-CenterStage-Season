@@ -98,4 +98,27 @@ public class HoratioAiAutonomous extends LinearOpMode
         frontRight.setTargetPosition(-distance);
         runWheels();
     }
+
+    public void turnRight(int rotations)//figure out how to do later
+    {
+        reset();
+        backLeft.setTargetPosition(rotations);
+        backRight.setTargetPosition(-rotations);
+        frontLeft.setTargetPosition(rotations);
+        frontRight.setTargetPosition(-rotations);
+        runWheels();
+    }
+
+    public void turnLeft(int rotations)
+    {
+        reset();
+        backLeft.setTargetPosition(-rotations);
+        backRight.setTargetPosition(rotations);
+        frontLeft.setTargetPosition(-rotations);
+        frontRight.setTargetPosition(rotations);
+        runWheels();
+    }
+
 }
+
+
