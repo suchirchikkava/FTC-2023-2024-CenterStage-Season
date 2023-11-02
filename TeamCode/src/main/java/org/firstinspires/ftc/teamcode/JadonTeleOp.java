@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp (name="TeleOpJadon")
-public class JadonFirstCode extends OpMode{
+public class JadonTeleOp extends OpMode{
 
     private DcMotor backLeft;
     private DcMotor backRight;

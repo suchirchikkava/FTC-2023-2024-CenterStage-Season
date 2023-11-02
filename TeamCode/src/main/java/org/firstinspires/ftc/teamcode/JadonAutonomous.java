@@ -1,12 +1,11 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 @Autonomous (name="JadonFirstAutonomous")
-public class JadonFirstAutonomous extends LinearOpMode {
+public class JadonAutonomous extends LinearOpMode {
     private DcMotor backLeft;
     private DcMotor backRight;
     private DcMotor frontLeft;
@@ -29,23 +28,6 @@ public class JadonFirstAutonomous extends LinearOpMode {
         frontLeft.setDirection(DcMotor.Direction.REVERSE);
 
         // ONE TILE is ~1060 CLICKS
-
-        // blue near
-        moveForward(1060);
-        //rotateAndLocateGamePiece();
-        moveForward(1590);
-        leftStrafe(1060);
-
-        // blue far
-        moveForward(1060);
-        //rotateAndLocateGamePiece();
-        moveForward(3710);
-
-        // red near
-
-
-        // red far
-
 
     }
 
