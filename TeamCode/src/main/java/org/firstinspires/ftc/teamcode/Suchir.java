@@ -18,10 +18,10 @@ public class Suchir extends OpMode{
 
     private Servo claw;
 
-    private double holdPlane = 0.0;
     private double launchPlane = 1.0;
-    private double closeClaw = 0.0;
+    private double holdPlane = 0.0;
     private double openClaw = 1.0;
+    private double closeClaw = 0.0;
     private double extend = 1.0;
     private double retract = 0.0;
 
