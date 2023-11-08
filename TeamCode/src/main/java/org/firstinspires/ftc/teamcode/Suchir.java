@@ -14,13 +14,16 @@ public class Suchir extends OpMode{
     private DcMotor backRight;
     private DcMotor arm;
     private Servo airplane;
+    private Servo elbow;
+
     private Servo claw;
 
     private double holdPlane = 0.0;
     private double launchPlane = 1.0;
-
     private double closeClaw = 0.0;
     private double openClaw = 1.0;
+    private double extend = 1.0;
+    private double retract = 0.0;
 
     public void init() {
         frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
@@ -29,6 +32,7 @@ public class Suchir extends OpMode{
         backRight = hardwareMap.get(DcMotor.class, "backRight");
         arm = hardwareMap.get(DcMotor.class, "arm");
         airplane = hardwareMap.get(Servo.class, "hook");
+        elbow = hardwareMap.get(Servo.class, "elbow");
         claw = hardwareMap.get(Servo.class, "claw");
 
         frontLeft.setDirection(DcMotor.Direction.FORWARD);
@@ -43,6 +47,7 @@ public class Suchir extends OpMode{
         plane();
         moveClaw();
         moveArm();
+        moveElbow();
     }
 
     public void moveBot() {
@@ -118,6 +123,16 @@ public class Suchir extends OpMode{
 
         if (gamepad1.right_stick_y > -0.3 && gamepad1.right_stick_y < 0.3) {
             arm.setPower(0.0);
+        }
+    }
+
+    public void moveElbow() {
+        if (gamepad1.x) {
+            elbow.setPosition(extend);
+        }
+
+        if (gamepad1.y) {
+            elbow.setPosition(retract);
         }
     }
 }
