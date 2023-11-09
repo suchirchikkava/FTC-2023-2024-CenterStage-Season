@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
 
 
-@TeleOp(name="Testing")
+@TeleOp(name="TeleOpFrojen")
 public class Suchir extends OpMode{
     private DcMotor frontLeft;
     private DcMotor backLeft;
@@ -15,7 +15,6 @@ public class Suchir extends OpMode{
     private DcMotor arm;
     private Servo airplane;
     private Servo elbow;
-
     private Servo claw;
 
     private double launchPlane = 1.0;
@@ -107,18 +106,18 @@ public class Suchir extends OpMode{
             claw.setPosition(closeClaw);
         }
 
-        if (gamepad2.y) {
+        if (gamepad1.y) {
             claw.setPosition(openClaw);
         }
     }
 
     public void moveArm() {
         if (gamepad1.right_stick_y > 0.3) {
-            arm.setPower(0.5);
+            arm.setPower(0.35);
         }
 
         if (gamepad1.right_stick_y < -0.3) {
-            arm.setPower(-0.5);
+            arm.setPower(-0.35);
         }
 
         if (gamepad1.right_stick_y > -0.3 && gamepad1.right_stick_y < 0.3) {
@@ -127,11 +126,11 @@ public class Suchir extends OpMode{
     }
 
     public void moveElbow() {
-        if (gamepad1.x) {
+        if (gamepad1.right_bumper) {
             elbow.setPosition(extend);
         }
 
-        if (gamepad1.y) {
+        if (gamepad1.left_bumper) {
             elbow.setPosition(retract);
         }
     }
